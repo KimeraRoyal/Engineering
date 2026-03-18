@@ -1,0 +1,22 @@
+{
+    "version": "1.0",
+    "fileName": "selection_big.png",
+    "width": 128,
+    "height": 32,
+    "columns": 4,
+    "rows": 1,
+    "frames": [
+        {
+            "duration": 80
+        },
+        {
+            "duration": 80
+        },
+        {
+            "duration": 80
+        },
+        {
+            "duration": 80
+        }
+    ]
+}

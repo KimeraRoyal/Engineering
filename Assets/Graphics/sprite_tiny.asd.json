@@ -1,0 +1,16 @@
+{
+    "version": "1.0",
+    "fileName": "sprite_tiny.png",
+    "width": 8,
+    "height": 4,
+    "columns": 2,
+    "rows": 1,
+    "frames": [
+        {
+            "duration": 80
+        },
+        {
+            "duration": 80
+        }
+    ]
+}
