@@ -1,3 +1,4 @@
+using Input;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,12 +15,12 @@ namespace Board
         public bool IsPressed => _mouse.IsPointerPressed;
 
         public UnityEvent<Vector2Int> OnHoverTile;
-        public UnityEvent<Vector2Int> OnPressTile;
-        public UnityEvent<Vector2Int> OnUnpressTile;
+        public UnityEvent<MouseButton, Vector2Int> OnPressTile;
+        public UnityEvent<MouseButton, Vector2Int> OnUnpressTile;
     
         private void Awake()
         {
-            _board = FindAnyObjectByType<global::Board.Board>();
+            _board = FindAnyObjectByType<Board>();
         
             _camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         
@@ -41,14 +42,14 @@ namespace Board
             OnHoverTile?.Invoke(_hoveredTile);
         }
 
-        private void Press(Vector2 mousePos)
+        private void Press(MouseButton button, Vector2 mousePos)
         {
-            OnPressTile?.Invoke(_hoveredTile);
+            OnPressTile?.Invoke(button, _hoveredTile);
         }
 
-        private void Unpress(Vector2 mousePos)
+        private void Unpress(MouseButton button, Vector2 mousePos)
         {
-            OnUnpressTile?.Invoke(_hoveredTile);
+            OnUnpressTile?.Invoke(button, _hoveredTile);
         }
     }
 }

@@ -2,7 +2,8 @@
     "name": "Input",
     "rootNamespace": "",
     "references": [
-        "TouchScript"
+        "TouchScript",
+        "Util"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

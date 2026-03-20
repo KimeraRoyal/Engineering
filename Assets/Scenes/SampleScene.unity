@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 106460366}
   - component: {fileID: 106460368}
   - component: {fileID: 106460367}
-  - component: {fileID: 106460369}
   - component: {fileID: 106460370}
   m_Layer: 0
   m_Name: Wire Tilemap
@@ -338,24 +337,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &106460369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106460365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a1a9910822bb8946b5a7cdf04c1f2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WirePlacer
-  OnBeginPlacing:
-    m_PersistentCalls:
-      m_Calls: []
-  OnFinishPlacing:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &106460370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2584,7 +2565,6 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
-  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2679,7 +2659,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 17.625
+  orthographic size: 15.40625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2812,21 +2792,6 @@ MonoBehaviour:
   type: 1
   screenTransformThreshold: 0.1
   minScreenPointsDistance: 0.5
---- !u!114 &519420037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b6bcf440ca4c2288e168841f973b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Input::Input.DragMovement
-  _dragAmount: {x: -25, y: -25}
-  _dragDamping: 0.1
-  _enabled: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,6 +3504,9 @@ GameObject:
   - component: {fileID: 2112766306}
   - component: {fileID: 2112766307}
   - component: {fileID: 2112766308}
+  - component: {fileID: 2112766311}
+  - component: {fileID: 2112766310}
+  - component: {fileID: 2112766309}
   m_Layer: 5
   m_Name: Toolbar
   m_TagString: Untagged
@@ -3606,160 +3574,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3960e1b84c706943a5605ce4050dde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Toolbar
-  _modes:
-  - _name: Move
-    OnEnter:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 519420037}
-          m_TargetAssemblyTypeName: Input.DragMovement, Input
-          m_MethodName: Enable
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Granularity
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnExit:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 519420037}
-          m_TargetAssemblyTypeName: Input.DragMovement, Input
-          m_MethodName: Disable
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _name: Build
-    OnEnter:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Granularity
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 2
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    OnExit:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _name: Wires
-    OnEnter:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Granularity
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 106460369}
-          m_TargetAssemblyTypeName: Board.WirePlacer, Assembly-CSharp
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-    OnExit:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1599299571}
-          m_TargetAssemblyTypeName: Board.SelectionGraphic, Assembly-CSharp
-          m_MethodName: set_Enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 106460369}
-          m_TargetAssemblyTypeName: Board.WirePlacer, Assembly-CSharp
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+--- !u!114 &2112766309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112766305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1db054976a4096afc3b6db6e07ebc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Toolbar.WireMode
+  _dragAmount: {x: 1, y: 1}
+--- !u!114 &2112766310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112766305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf5f4084fe45f7a15d2a464f8dd21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Toolbar.BuildMove
+--- !u!114 &2112766311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112766305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26dd9bef41a84485993cfb8061b8e562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Toolbar.MoveMode
+  _dragAmount: {x: -25, y: -25}
 --- !u!1001 &2216208837211357715
 PrefabInstance:
   m_ObjectHideFlags: 0
